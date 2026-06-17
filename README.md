@@ -128,9 +128,6 @@ Para proteger um endpoint:
 | Arquivo | Ambiente |
 |---------|----------|
 | `appsettings.json` | Base / padrão |
-| `appsettings.DEV.json` | Desenvolvimento |
-| `appsettings.UAT.json` | Homologação |
-| `appsettings.PROD.json` | Produção |
 
 ---
 
