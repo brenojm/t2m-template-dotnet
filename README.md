@@ -1,6 +1,6 @@
 # T2MTemplate - Template Padrão de Projetos .NET
 
-Template oficial da T2M Consulting para criação de projetos .NET internos, seguindo arquitetura em camadas com autenticação integrada ao SGId.
+Template oficial da T2M para criação de projetos .NET internos, seguindo arquitetura em camadas com autenticação integrada ao SGId.
 
 ## Pré-requisitos
 
