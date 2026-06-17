@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "T2M Consulting",
+  "classifications": ["Web", "API", ".NET"],
+  "name": "T2M Template .NET",
+  "identity": "t2m.Template.dotnet",
+  "shortName": "t2m-dotnet",
+  "sourceName": "T2MTemplate",
+  "preferNameDirectory": true
+}
