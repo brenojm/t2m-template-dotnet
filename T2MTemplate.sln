@@ -1,23 +1,23 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Api", "T2MTemplate.Api\T2MTemplate.Api.csproj", "{14AA7A92-3D01-4C24-9847-5365EA9893EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Api", "src\T2MTemplate.Api\T2MTemplate.Api.csproj", "{14AA7A92-3D01-4C24-9847-5365EA9893EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{D5CB5DE5-F80E-4E7E-BD5C-49A4B19B7715}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Application", "T2MTemplate.Application\T2MTemplate.Application.csproj", "{383DB52A-1161-42C0-9BD2-F3D5AD23A79F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Application", "src\T2MTemplate.Application\T2MTemplate.Application.csproj", "{383DB52A-1161-42C0-9BD2-F3D5AD23A79F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{EECB6B3F-22AE-4479-8FA9-8F74455E624A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Domain", "T2MTemplate.Domain\T2MTemplate.Domain.csproj", "{C40FEB3E-69B5-4E56-8E7A-DF8054C2ABF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Domain", "src\T2MTemplate.Domain\T2MTemplate.Domain.csproj", "{C40FEB3E-69B5-4E56-8E7A-DF8054C2ABF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{A57F0FCB-118B-4804-8DF9-A05AF9A393C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Infra", "T2MTemplate.Infra\T2MTemplate.Infra.csproj", "{A8F381AA-CA45-49D8-B74E-95A990ABA630}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T2MTemplate.Infra", "src\T2MTemplate.Infra\T2MTemplate.Infra.csproj", "{A8F381AA-CA45-49D8-B74E-95A990ABA630}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Solution Items", "0 - Solution Items", "{2FFDFAAB-68F1-467B-B930-B8EDA1D13BF8}"
 	ProjectSection(SolutionItems) = preProject
