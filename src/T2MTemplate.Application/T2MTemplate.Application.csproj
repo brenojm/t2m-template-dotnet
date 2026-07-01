@@ -10,7 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+  </ItemGroup>
+
+  <!--
+    AutoMapper 14.0.0 é a última versão MIT/gratuita. O advisory GHSA-rvv3-g6hj-g44x
+    (DoS por recursão descontrolada) só é corrigido a partir da 15.1.1, que passou a
+    exigir licença comercial. Optamos por manter a linha gratuita: a exposição é nula
+    aqui, pois o mapeamento é de DTOs simples e não recursivos sobre entrada confiável.
+    A supressão abaixo é restrita a este advisory — demais vulnerabilidades seguem alertando.
+  -->
+  <ItemGroup>
+    <NuGetAuditSuppress Include="https://github.com/advisories/GHSA-rvv3-g6hj-g44x" />
   </ItemGroup>
 
   <ItemGroup>
