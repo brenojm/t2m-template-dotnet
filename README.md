@@ -37,51 +37,56 @@ O comando substitui automaticamente `T2MTemplate` pelo nome informado em todos o
 
 ## Estrutura do Projeto
 
-O template segue Clean Architecture com separação clara de responsabilidades em quatro camadas:
+O template segue Clean Architecture com separação clara de responsabilidades. Os projetos de produção ficam em `src/` e os projetos de teste em `tests/`:
 
 ```
 NomeDoProjeto.sln
-├── 0 - Solution Items
-│   ├── Dockerfile
-│   └── .gitignore
+├── Dockerfile
+├── .gitignore
 │
-├── 1 - Presentation
-│   └── NomeDoProjeto.Api
-│       ├── Controllers/
-│       ├── Extensions/
-│       │   ├── SGIdAuthenticationExtensions.cs
-│       │   └── ServiceCollectionExtensions.cs
-│       └── Middlewares/
-│           └── GlobalExceptionHandler.cs
+├── src/
+│   ├── NomeDoProjeto.Api            (Presentation)
+│   │   ├── Controllers/
+│   │   ├── Extensions/
+│   │   │   ├── SGIdAuthenticationExtensions.cs
+│   │   │   ├── ServiceCollectionExtensions.cs
+│   │   │   └── SwaggerExtensions.cs
+│   │   └── Middlewares/
+│   │       └── GlobalExceptionHandler.cs
+│   │
+│   ├── NomeDoProjeto.Application     (Application)
+│   │   ├── DTOs/
+│   │   ├── Interfaces/
+│   │   ├── Mappings/
+│   │   └── Services/
+│   │
+│   ├── NomeDoProjeto.Domain          (Domain)
+│   │   ├── Entities/
+│   │   ├── Exceptions/
+│   │   └── Interfaces/
+│   │
+│   └── NomeDoProjeto.Infra           (Infra)
+│       ├── Data/
+│       │   └── AppDbContext.cs
+│       └── Repositories/
 │
-├── 2 - Application
-│   └── NomeDoProjeto.Application
-│       ├── DTOs/
-│       ├── Interfaces/
-│       ├── Mappings/
-│       └── Services/
-│
-├── 3 - Domain
-│   └── NomeDoProjeto.Domain
-│       ├── Entities/
-│       ├── Exceptions/
-│       └── Interfaces/
-│
-└── 4 - Infra
-    └── NomeDoProjeto.Infra
-        ├── Data/
-        │   └── AppDbContext.cs
-        └── Repositories/
+└── tests/
+    └── NomeDoProjeto.Tests           (Tests)
+        └── Services/
+            └── CollaboratorServiceTests.cs
 ```
+
+> No arquivo de solução (`.sln`) os projetos aparecem organizados em pastas virtuais — `1 - Presentation`, `2 - Application`, `3 - Domain`, `4 - Infra`, `5 - Tests` e `0 - Solution Items` — independentemente do local físico em `src/` e `tests/`.
 
 ### Camadas
 
 | Camada | Responsabilidade |
 |--------|-----------------|
-| **Presentation** | Controllers, autenticação SGId, middleware de exceções |
+| **Presentation** | Controllers, autenticação SGId, configuração do Swagger, middleware de exceções |
 | **Application** | Services, DTOs, AutoMapper profiles |
 | **Domain** | Entidades, interfaces de repositório, exceptions de domínio |
 | **Infra** | AppDbContext, implementação dos repositories (EF Core + PostgreSQL) |
+| **Tests** | Testes unitários (xUnit + Moq) |
 
 ---
 
@@ -139,7 +144,7 @@ Para proteger um endpoint:
 | Api | Microsoft.IdentityModel.Tokens | 8.6.1 |
 | Api | System.IdentityModel.Tokens.Jwt | 8.6.1 |
 | Api | Swashbuckle.AspNetCore | 6.6.2 |
-| Application | AutoMapper | 13.0.1 |
+| Application | AutoMapper | 14.0.0 |
 | Infra | Microsoft.EntityFrameworkCore | 9.0.5 |
 | Infra | Npgsql.EntityFrameworkCore.PostgreSQL | 9.0.4 |
 
@@ -154,7 +159,7 @@ Para proteger um endpoint:
 - **AutoMapper** para mapeamento Entity ↔ DTO
 - **Interfaces de Repository** definidas na camada Domain
 - **Injeção de Dependência** centralizada em `ServiceCollectionExtensions`
-- **Swagger** habilitado em todos os ambientes
+- **Swagger** documentado com autenticação Bearer JWT, habilitado apenas em ambiente de desenvolvimento
 
 ---
 
